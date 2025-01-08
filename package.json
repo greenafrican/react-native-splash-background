@@ -1,0 +1,95 @@
+{
+  "name": "react-native-splash-background",
+  "version": "1.0.0",
+  "description": "A React Native module that shows a splash background until manually hidden.",
+  "main": "./lib/commonjs/index.js",
+  "module": "./lib/module/index.js",
+  "types": "./lib/typescript/commonjs/src/index.d.ts",
+  "scripts": {
+    "build": "bob build",
+    "lint": "eslint .",
+    "test": "jest",
+    "prepare": "bob build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greenafrican/react-native-splash-background.git"
+  },
+  "keywords": [
+    "react-native",
+    "splash",
+    "background"
+  ],
+  "author": "Robert Elliott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/greenafrican/react-native-splash-background/issues"
+  },
+  "homepage": "https://github.com/greenafrican/react-native-splash-background#readme",
+  "dependencies": {
+    "react-native": "^0.75.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
+    "@types/jest": "^29.5.14",
+    "@types/react-native": "^0.73.0",
+    "react-native-builder-bob": "^0.35.2",
+    "typescript": "^5.7.2"
+  },
+  "peerDependencies": {
+    "react": ">= 16.9.0",
+    "react-native": ">= 0.61.5"
+  },
+  "source": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/typescript/module/src/index.d.ts",
+        "default": "./lib/module/index.js"
+      },
+      "require": {
+        "types": "./lib/typescript/commonjs/src/index.d.ts",
+        "default": "./lib/commonjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "commonjs",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "esm": true
+        }
+      ]
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
+}
