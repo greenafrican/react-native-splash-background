@@ -5,6 +5,8 @@
 /dist
 /build
 
+*.tgz
+*.tar.gz
 # Dependencies
 /node_modules
 /example/node_modules
